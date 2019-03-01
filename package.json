@@ -4,7 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "protoc": "protoc -I=. notes.proto --js_out=import_style=commonjs:."
   },
   "repository": {
     "type": "git",
@@ -17,7 +18,13 @@
   },
   "homepage": "https://github.com/bkawk/grpc#readme",
   "dependencies": {
+    "google-protobuf": "^3.7.0-rc.3",
     "grpc": "^1.18.0",
+    "grpc-web": "^1.0.3",
     "uuid": "^3.3.2"
+  },
+  "devDependencies": {
+    "webpack": "^4.29.6",
+    "webpack-cli": "^3.2.3"
   }
 }
