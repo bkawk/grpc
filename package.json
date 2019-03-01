@@ -5,7 +5,10 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "protoc": "protoc -I=. notes.proto --js_out=import_style=commonjs:."
+    "protoc": "protoc -I=. notes.proto --js_out=import_style=commonjs:. --grpc-web_out=import_style=commonjs,mode=grpcwebtext:.",
+    "webpack": "npm install && npx webpack webpack-me.js",
+    "build": "docker build -t helloworld/envoy -f ./Dockerfile .",
+    "run": "docker run -d -p 8080:8080 --network=host envoy/proxy"
   },
   "repository": {
     "type": "git",
